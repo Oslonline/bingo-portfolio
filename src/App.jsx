@@ -7,11 +7,11 @@ function App() {
         <div className="bg-white dark:bg-gray-950">
             <NavBar />
             <Home />
-            <span id="Articles"></span>
+            <span id="articles"></span>
             <Articles />
-            <span id="Projects"></span>
+            <span id="projects"></span>
             <Projects />
-            <span id="Stacks"></span>
+            <span id="stacks"></span>
             <Stacks />
             <Footer />
             <Credits />

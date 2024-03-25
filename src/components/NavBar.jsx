@@ -42,13 +42,13 @@ const NavBar = () => {
             </div>
             <div className="hidden items-center gap-5 md:flex">
                 <nav className="flex gap-5 text-gray-600 dark:text-gray-300">
-                    <a href="#Articles" onClick={() => handleNavItemClick("1")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                    <a href="#articles" onClick={() => handleNavItemClick("1")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                         Articles
                     </a>
-                    <a href="#Projects" onClick={() => handleNavItemClick("2")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                    <a href="#projects" onClick={() => handleNavItemClick("2")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                         Projects
                     </a>
-                    <a href="#Stacks" onClick={() => handleNavItemClick("3")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                    <a href="#stacks" onClick={() => handleNavItemClick("3")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                         Stacks
                     </a>
                 </nav>
@@ -70,7 +70,7 @@ const NavBar = () => {
                         <div className="flex w-1/2">
                             <nav className="flex flex-col gap-4 text-gray-600 dark:text-gray-300">
                                 <a
-                                    href="#Articles"
+                                    href="#articles"
                                     onClick={() => {
                                         handleNavItemClick("1");
                                     }}
@@ -79,7 +79,7 @@ const NavBar = () => {
                                     Articles
                                 </a>
                                 <a
-                                    href="#Projects"
+                                    href="#projects"
                                     onClick={() => {
                                         handleNavItemClick("2");
                                     }}
@@ -88,7 +88,7 @@ const NavBar = () => {
                                     Projects
                                 </a>
                                 <a
-                                    href="#Stacks"
+                                    href="#stacks"
                                     onClick={() => {
                                         handleNavItemClick("3");
                                     }}
