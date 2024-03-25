@@ -1,0 +1,9 @@
+[
+    {
+        "title": "k8slab: A Homelab Kubernetes Cluster Setup",
+        "content": "k8slab is designed to simplify the process of setting up a Kubernetes cluster in a homelab environment, leveraging Proxmox VMs for creating both master and worker nodes. This project utilizes Terraform for infrastructure provisioning and Ansible for configuration management, ensuring that your Kubernetes nodes are ready to go with minimal manual intervention.",
+        "imageURL": "../projects/k8slab.png",
+        "stacks": ["ansible", "terraform", "kubernetes"],
+        "link": "https://github.com/cathreat/k8slab"
+    }
+]
