@@ -5,5 +5,12 @@
         "imageURL": "../projects/k8slab.png",
         "stacks": ["ansible", "terraform", "kubernetes"],
         "link": "https://github.com/cathreat/k8slab"
+    },
+    {
+        "title": "BugBounty-Toolbox",
+        "content": "BugBounty-Toolbox automates the setup and configuration of various tools and utilities commonly used in bug bounty hunting. It includes playbooks and roles for managing SSH configurations, installing utils, and opensource pentesting tools.",
+        "imageURL": "../projects/bugbounty-toolbox.png",
+        "stacks": ["ansible"],
+        "link": "https://github.com/0xBingo/bugbounty-toolbox"
     }
 ]
