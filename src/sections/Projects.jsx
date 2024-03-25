@@ -10,7 +10,7 @@ const Projects = () => {
                     <h3 className="w-max select-none rounded-full bg-gray-200 px-3 py-1 text-gray-800 dark:bg-gray-700 dark:text-gray-50">Projects</h3>
                     <p className="text-gray-600 dark:text-gray-300">An overview of my projects</p>
                 </div>
-                <div className="flex w-full flex-col gap-3">
+                <div className="flex w-full flex-col gap-10">
                     {projectsData.map((project, index) => (
                         <Project key={index} project={project} index={index} />
                     ))}
