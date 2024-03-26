@@ -1,5 +1,6 @@
 export { default as Ansible } from "./Ansible.jsx";
 export { default as Aws } from "./Aws.jsx";
+export { default as Azure} from "./Azure.jsx";
 export { default as Burpsuite } from "./Burpsuite.jsx";
 export { default as Docker } from "./Docker.jsx";
 export { default as Elastic } from "./Elastic.jsx";

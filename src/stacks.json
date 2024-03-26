@@ -25,7 +25,7 @@
     },
     {
         "ctgtitle": "Cloud",
-        "stacks": ["aws", "gcloud"]
+        "stacks": ["aws", "azure", "gcloud"]
     },
     {
         "ctgtitle": "Pentesting",
