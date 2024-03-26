@@ -30,7 +30,7 @@ const Home = () => {
                         </p>
                     </div>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex gap-6">
                     <a href="https://github.com/0xBingo" target="_blank">
                         <Github />
                     </a>

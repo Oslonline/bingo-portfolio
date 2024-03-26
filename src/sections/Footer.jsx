@@ -23,7 +23,7 @@ function Footer() {
             </div>
             <div className="flex flex-col gap-3">
                 <p className="text-sm text-center text-gray-600 dark:text-gray-300">You can also check my HackTheBox & TryHackMe profiles.</p>
-                <div className="flex gap-3 justify-center">
+                <div className="flex gap-4 justify-center">
                     <a href="https://tryhackme.com/p/BingOps" target="_blank">
                         <Thm />
                     </a>
