@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'KronaOne';
+    src: url('./assets/font/KronaOne.ttf');
+}
+
 body,
 html {
     font-family: 'Inter', sans-serif;

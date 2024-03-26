@@ -13,6 +13,9 @@ export default {
         mlightphone: "0px 25px 0px 8px #E5E7EB;",
         mdarkphone: "0px 25px 0px 8px #374151;",
       },
+      fontFamily: {
+        krona: "KronaOne"
+      }
     },
   },
   plugins: [],

@@ -34,9 +34,9 @@ const NavBar = () => {
     };
 
     return (
-        <header className="sticky top-0 z-10 flex h-16 w-full items-center justify-between bg-white px-4 dark:bg-gray-950 md:justify-around">
+        <header className="sticky top-0 z-10 flex h-20 w-full items-center justify-between bg-white px-4 dark:bg-gray-950 md:justify-around">
             <div>
-                <a href="#" onClick={() => handleNavItemClick(null)} className="select-none text-3xl font-bold dark:text-gray-50">
+                <a href="#" onClick={() => handleNavItemClick(null)} className="select-none text-3xl font-krona dark:text-gray-50">
                     Bingo
                 </a>
             </div>
