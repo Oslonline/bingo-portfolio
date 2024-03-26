@@ -96,6 +96,7 @@ const NavBar = () => {
                                 >
                                     Stacks
                                 </a>
+                                <a href="mailto:therealbingops@gmail.com" className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">Contact Me</a>
                             </nav>
                         </div>
                         <div className="flex w-1/2 items-end justify-end pb-2">
