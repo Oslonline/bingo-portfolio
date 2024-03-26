@@ -7,7 +7,7 @@ const NavBar = () => {
     const [activeNavItem, setActiveNavItem] = useState(null);
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const savedDarkMode = localStorage.getItem("darkMode");
-        return savedDarkMode ? JSON.parse(savedDarkMode) : false;
+        return savedDarkMode ? JSON.parse(savedDarkMode) : true;
     });
     const [showBurgerMenu, setShowBurgerMenu] = useState(false);
     const [burgerIcon, setBurgerIcon] = useState(false);
