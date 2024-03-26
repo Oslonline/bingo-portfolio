@@ -1,6 +1,7 @@
 # About
 
 A ReactJS & TailwindCSS portfolio for [Bingo](https://github.com/0xBingo).
+<br>
 Based on a [Sagar Shah](https://www.figma.com/@shahsagarm) Figma design.
 <br>
 Responsive, Light & Dark mode & Easy data change with json files.
