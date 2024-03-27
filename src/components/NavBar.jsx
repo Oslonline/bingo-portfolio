@@ -64,8 +64,8 @@ const NavBar = () => {
                     </div>
                 </div>
             </header>
-            <header className="fixed top-0 z-20 w-full bg-white/75 px-4 backdrop-blur-xl dark:bg-gray-950/75 md:hidden">
-                <div className="flex h-20 items-center justify-between">
+            <header className="fixed top-0 z-20 w-full bg-white/75 backdrop-blur-xl dark:bg-gray-950/75 md:hidden">
+                <div className="flex h-20 items-center justify-between px-5">
                     <div>
                         <a href="#" onClick={() => handleNavItemClick(null)} className="select-none font-krona text-3xl dark:text-gray-50">
                             Bingo
