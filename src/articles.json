@@ -7,7 +7,7 @@
     },
     {
         "title": "Node — Eval",
-        "content": "Le challenge est à 1% de réussite au moment où j’écris ce mini-walkthrough, j’ai donc décidé d’écrire ceci pour partager mes recherches. Pour réussir ce challenge, il faut d’abord trigger les inputs pour voir comment l’application fonctionne...",
+        "content": "The challenge has a success rate of 1% at the time of writing this mini-walkthrough, so I decided to write this to share my research. To succeed in this challenge, you must first trigger the inputs to see how the application works...",
         "imageURL": "../articles/article-NodeEval.png",
         "link": "https://medium.com/@bingops/node-eval-328719303134"
     }
