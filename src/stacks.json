@@ -1,18 +1,18 @@
 [
     {
-        "ctgtitle": "Gestion de code source, Intégration Continue et Déploiement Continu (SCM/CI/CD)",
-        "stacks": ["git", "jenkins", "gitlab"]
+        "ctgtitle": "SCM & CI/CD",
+        "stacks": ["git", "gitlab", "jenkins"]
     },
     {
-        "ctgtitle": "Configuration et Gestion d'Infrastructure (IaC)",
+        "ctgtitle": "Infrastructure as Code",
         "stacks": ["terraform", "ansible"]
     },
     {
-        "ctgtitle": "Conteneurisation et Orchestration",
+        "ctgtitle": "Containers & Orchestration",
         "stacks": ["docker", "kubernetes"]
     },
     {
-        "ctgtitle": "Monitoring et Logging",
+        "ctgtitle": "Monitoring",
         "stacks": ["prometheus", "grafana", "elastic"]
     },
     {
@@ -24,7 +24,7 @@
         "stacks": ["postgresql", "mysql", "mariadb", "mongodb"]
     },
     {
-        "ctgtitle": "Cloud",
+        "ctgtitle": "Cloud Computing",
         "stacks": ["aws", "azure", "gcloud"]
     },
     {
