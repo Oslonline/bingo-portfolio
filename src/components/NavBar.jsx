@@ -86,7 +86,7 @@ const NavBar = () => {
                                     onClick={() => {
                                         handleNavItemClick("1");
                                     }}
-                                    className="py-2 hover:bg-gray-200 hover:text-gray-900"
+                                    className="py-2"
                                 >
                                     Articles
                                 </a>
@@ -95,7 +95,7 @@ const NavBar = () => {
                                     onClick={() => {
                                         handleNavItemClick("2");
                                     }}
-                                    className="py-2 hover:bg-gray-200 hover:text-gray-900"
+                                    className="py-2"
                                 >
                                     Projects
                                 </a>
@@ -104,7 +104,7 @@ const NavBar = () => {
                                     onClick={() => {
                                         handleNavItemClick("3");
                                     }}
-                                    className="py-2 hover:bg-gray-200 hover:text-gray-900"
+                                    className="py-2"
                                 >
                                     Stacks
                                 </a>
