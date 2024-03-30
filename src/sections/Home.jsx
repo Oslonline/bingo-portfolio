@@ -32,16 +32,13 @@ const Home = () => {
                 </div>
                 <div className="flex gap-6">
                     <a href="https://github.com/0xBingo" target="_blank">
-                        <Github />
-                    </a>
-                    <a href="https://www.linkedin.com/in/corentin-guyon/" target="_blank">
-                        <Linkedin />
-                    </a>
-                    <a href="https://twitter.com/B1ng0ps" target="_blank">
-                        <X />
+                        <Github/>
                     </a>
                     <a href="https://medium.com/@bingops" target="_blank">
-                        <Medium />
+                        <Medium/>
+                    </a>
+                    <a href="https://www.linkedin.com/in/corentin-guyon/" target="_blank">
+                        <Linkedin/>
                     </a>
                 </div>
             </div>
