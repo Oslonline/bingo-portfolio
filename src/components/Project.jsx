@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "./icons";
 
 function Project({ project, index }) {

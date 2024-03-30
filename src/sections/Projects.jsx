@@ -1,4 +1,3 @@
-import React from "react";
 import Project from "../components/Project";
 import projectsData from "../projects.json";
 

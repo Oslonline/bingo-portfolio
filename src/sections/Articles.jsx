@@ -1,4 +1,3 @@
-import React from "react";
 import Article from "../components/Article";
 import articlesData from "../articles.json";
 

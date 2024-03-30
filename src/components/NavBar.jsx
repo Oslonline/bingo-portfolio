@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import darkModeIcon from "../assets/icons/dark-mode.svg";
 import lightModeIcon from "../assets/icons/light-mode.svg";
 import { BurgerOpen, BurgerClose } from "./icons";
