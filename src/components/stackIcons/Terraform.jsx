@@ -1,5 +1,3 @@
-import React from "react";
-
 function Terraform() {
     return (
         <svg className="drop-shadow-lg" width="50" height="50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">

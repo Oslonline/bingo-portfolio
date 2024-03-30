@@ -1,5 +1,3 @@
-import React from "react";
-
 function Burpsuite() {
     return (
         <svg className="drop-shadow-lg" viewBox="226.526 104.156 419 420.391" height="47" xmlns="http://www.w3.org/2000/svg">
