@@ -6,7 +6,7 @@ function Project({ project, index }) {
 
     return (
         <div className={`flex w-full flex-col rounded-xl bg-white shadow-md dark:bg-gray-800 ${isEven ? "flex-row-reverse md:flex-row" : "flex-col md:flex-row-reverse"}`}>
-            <div className={`flex min-h-full items-center justify-center rounded-t-xl bg-gray-50 p-12 dark:bg-gray-700 md:w-1/2 ${isEven ? "md:rounded-l-xl md:rounded-r-none" : "md:rounded-l-none md:rounded-r-xl"}`}>
+            <div className={`flex min-h-full items-center justify-center rounded-t-xl bg-gray-50 p-4 md:p-10 dark:bg-gray-700 md:w-1/2 ${isEven ? "md:rounded-l-xl md:rounded-r-none" : "md:rounded-l-none md:rounded-r-xl"}`}>
                 <img className="rounded-xl" src={imageURL} alt="" />
             </div>
             <div className={`rounded-xl bg-gray-50 p-6 dark:bg-gray-800 md:flex md:w-1/2 ${isEven ? "md:rounded-r-xl" : "md:rounded-l-xl"}`}>
