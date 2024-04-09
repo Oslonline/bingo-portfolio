@@ -1,10 +1,11 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import darkModeIcon from "../assets/icons/dark-mode.svg";
 import lightModeIcon from "../assets/icons/light-mode.svg";
 import { BurgerOpen, BurgerClose } from "./icons";
 
 const NavBar = () => {
     const [activeNavItem, setActiveNavItem] = useState(null);
+    const [modalIsOpen, setIsOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(() => {
         const savedDarkMode = localStorage.getItem("darkMode");
         return savedDarkMode ? JSON.parse(savedDarkMode) : true;
@@ -26,11 +27,27 @@ const NavBar = () => {
         setActiveNavItem(navItemId);
         setShowBurgerMenu(false);
         setBurgerIcon(false);
+        closeModal();
     };
 
     const handleBurgerClick = () => {
         setShowBurgerMenu(!showBurgerMenu);
         setBurgerIcon(!showBurgerMenu);
+    };
+
+    const openModal = () => {
+        setIsOpen(true);
+        setShowBurgerMenu(!showBurgerMenu);
+        setBurgerIcon(!showBurgerMenu);
+    };
+
+    const closeModal = () => {
+        setIsOpen(false);
+    };
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        closeModal();
     };
 
     return (
@@ -53,14 +70,14 @@ const NavBar = () => {
                             Stacks
                         </a>
                     </nav>
+                    <hr className="w-6 rotate-90 dark:border-gray-500" />
                     <div className="flex items-center gap-5">
-                        <hr className="w-5 rotate-90" />
                         <button onClick={() => setIsDarkMode(!isDarkMode)}>
                             <img src={isDarkMode ? darkModeIcon : lightModeIcon} alt="" />
                         </button>
-                        <a href="mailto:therealbingops@gmail.com" className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
+                        <button onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
                             Contact Me
-                        </a>
+                        </button>
                     </div>
                 </div>
             </header>
@@ -108,9 +125,9 @@ const NavBar = () => {
                                 >
                                     Stacks
                                 </a>
-                                <a href="mailto:therealbingops@gmail.com" className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
+                                <button onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
                                     Contact Me
-                                </a>
+                                </button>
                             </nav>
                         </div>
                         <div className="flex w-1/2 items-end justify-end pb-2">
@@ -121,6 +138,41 @@ const NavBar = () => {
                     </div>
                 </div>
             </header>
+            {modalIsOpen && (
+                <div className="fixed left-0 top-0 z-20 flex h-full w-full items-center justify-center p-4 backdrop-blur-xl md:mt-20 md:p-0">
+                    <div className="w-full max-w-md rounded-lg bg-white/75 p-6 shadow-md backdrop-blur-xl dark:bg-gray-950/75 dark:shadow-gray-100/10">
+                        <div className="mb-4 flex justify-between">
+                            <h2 className="text-xl font-semibold dark:text-gray-50">Contact Me</h2>
+                            <button onClick={closeModal}>
+                                <BurgerClose />
+                            </button>
+                        </div>
+                        <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                            <div className="flex flex-col gap-1">
+                                <label className="select-none text-sm text-gray-700 dark:text-gray-300" htmlFor="username">
+                                    Full Name :
+                                </label>
+                                <input placeholder="John Doe" className="w-full rounded-lg border border-gray-500 bg-gray-50 p-2 focus:border-gray-900 focus:outline-none dark:border-transparent dark:bg-gray-700 dark:text-gray-50 dark:caret-white dark:focus:border dark:focus:border-gray-300" name="username" type="text" required />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label className="select-none text-sm text-gray-700 dark:text-gray-300" htmlFor="email">
+                                    Email :
+                                </label>
+                                <input placeholder="john.doe@mail.com" className="w-full rounded-lg border border-gray-500 bg-gray-50 p-2 focus:border-gray-900 focus:outline-none dark:border-transparent dark:bg-gray-700 dark:text-gray-50 dark:caret-white dark:focus:border dark:focus:border-gray-300" name="email" type="email" required />
+                            </div>
+                            <div className="flex flex-col gap-1">
+                                <label className="select-none text-sm text-gray-700 dark:text-gray-300" htmlFor="message" required>
+                                    Message :
+                                </label>
+                                <textarea placeholder="I want to talk with you about ....." name="message" className="w-full rounded-lg border border-gray-500 bg-gray-50 p-2 focus:border-gray-900 focus:outline-none dark:border-transparent dark:bg-gray-700 dark:text-gray-50 dark:caret-white dark:focus:border dark:focus:border-gray-300" rows="7"></textarea>
+                            </div>
+                            <button type="submit" className="rounded-lg bg-gray-900 px-4 py-2  text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            )}
         </>
     );
 };
