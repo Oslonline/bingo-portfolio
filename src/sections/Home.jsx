@@ -29,7 +29,7 @@ const Home = () => {
                             <span class="relative inline-flex h-3 w-3 rounded-full bg-orange-700"></span>
                         </span>
                         <p>
-                            Currently working at <span className="font-semibold dark:text-gray-100">Radio France</span>
+                            Currently working at <a href="https://radiofrance.com" className="font-semibold dark:text-gray-100 underline dark:hover:text-gray-300 hover:text-gray-800">Radio France</a>
                         </p>
                     </div>
                 </div>
