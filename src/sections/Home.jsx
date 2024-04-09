@@ -1,9 +1,9 @@
 import MainImg from "../assets/images/main-img.jpg";
-import { Github, Medium, Linkedin, X, Location, Availability } from "../components/icons";
+import { Github, Medium, Linkedin, Location } from "../components/icons";
 
 const Home = () => {
     return (
-        <section className="pt-20 flex w-full flex-col items-center gap-20 py-10 md:flex-row-reverse md:py-24">
+        <section className="flex w-full flex-col items-center gap-20 py-10 pt-20 md:flex-row-reverse md:py-24">
             <div className="flex items-center justify-center md:w-1/3">
                 <div className="w-3/6 md:h-2/5 md:w-3/5">
                     <img id="main-img" src={MainImg} alt="" className="hidden border-8 border-transparent shadow-mlight dark:shadow-mdark md:block" />
@@ -23,8 +23,11 @@ const Home = () => {
                         <Location />
                         <p>Paris, France</p>
                     </div>
-                    <div className="flex gap-2">
-                        <Availability />
+                    <div className="flex gap-2 items-center">
+                        <span class="relative flex h-3 w-3 mx-1">
+                            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-orange-700 opacity-75"></span>
+                            <span class="relative inline-flex h-3 w-3 rounded-full bg-orange-700"></span>
+                        </span>
                         <p>
                             Currently working at <span className="font-semibold dark:text-gray-100">Radio France</span>
                         </p>
@@ -32,13 +35,13 @@ const Home = () => {
                 </div>
                 <div className="flex gap-6">
                     <a href="https://github.com/0xBingo" target="_blank">
-                        <Github/>
+                        <Github />
                     </a>
                     <a href="https://medium.com/@bingops" target="_blank">
-                        <Medium/>
+                        <Medium />
                     </a>
                     <a href="https://www.linkedin.com/in/corentin-guyon/" target="_blank">
-                        <Linkedin/>
+                        <Linkedin />
                     </a>
                 </div>
             </div>
