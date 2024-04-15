@@ -17,8 +17,8 @@ function ContactForm({ closeModal, updateSuccessMessage }) {
             return;
         }
 
-        if (message.length < 6) {
-            setErrorMessage("Message must be at least 6 characters long.");
+        if (message.length < 20) {
+            setErrorMessage("Message must be at least 20 characters long.");
             return;
         }
 
