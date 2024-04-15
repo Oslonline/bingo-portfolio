@@ -5,6 +5,7 @@ import { BurgerOpen, BurgerClose } from "./icons";
 import ContactForm from "./ContactForm";
 
 const NavBar = () => {
+    const [successMessage, setSuccessMessage] = useState("");
     const [activeNavItem, setActiveNavItem] = useState(null);
     const [modalIsOpen, setIsOpen] = useState(false);
     const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -23,6 +24,13 @@ const NavBar = () => {
             document.documentElement.classList.remove("dark");
         }
     }, [isDarkMode]);
+
+    const updateSuccessMessage = (message) => {
+        setSuccessMessage(message);
+        setTimeout(() => {
+            setSuccessMessage("");
+        }, 3000);
+    };
 
     const handleNavItemClick = (navItemId) => {
         setActiveNavItem(navItemId);
@@ -76,6 +84,11 @@ const NavBar = () => {
                         </button>
                     </div>
                 </div>
+                {successMessage && (
+                    <div className="rounded-lgpx-4 absolute bottom-0 left-1/2 z-50 flex -translate-x-1/2 translate-y-20 transform items-center rounded-lg border-2 border-green-500 bg-white/80 px-4 py-5 text-green-500 backdrop-blur-lg  dark:border-none dark:bg-green-500/80 dark:text-gray-50">
+                        <p>{successMessage}</p>
+                    </div>
+                )}
             </header>
             <header className="fixed top-0 z-20 w-full bg-white/75 backdrop-blur-xl dark:bg-gray-950/75 md:hidden">
                 <div className="flex h-20 items-center justify-between px-5">
@@ -89,6 +102,11 @@ const NavBar = () => {
                             {burgerIcon ? <BurgerClose /> : <BurgerOpen />}
                         </button>
                     </div>
+                    {successMessage && (
+                        <div className="rounded-lgpx-4 absolute bottom-0 left-1/2 z-50 flex -translate-x-1/2 translate-y-20 transform items-center rounded-lg border-2 border-green-500 bg-white/80 px-4 py-5 text-green-500 backdrop-blur-lg  dark:border-none dark:bg-green-500/80 dark:text-gray-50">
+                            <p>{successMessage}</p>
+                        </div>
+                    )}
                 </div>
                 <div className={`flex w-full flex-col shadow-md transition-all duration-300 ${showBurgerMenu ? "opacity-100" : "pointer-events-none hidden opacity-0"}`}>
                     <div className="flex w-full p-5">
@@ -143,7 +161,7 @@ const NavBar = () => {
                                 <BurgerClose />
                             </button>
                         </div>
-                        <ContactForm closeModal={closeModal} />
+                        <ContactForm updateSuccessMessage={updateSuccessMessage} closeModal={closeModal} />
                     </div>
                 </div>
             )}

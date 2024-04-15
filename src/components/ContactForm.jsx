@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-function ContactForm({ closeModal }) {
+function ContactForm({ closeModal, updateSuccessMessage }) {
     const form = useRef();
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -36,7 +36,7 @@ function ContactForm({ closeModal }) {
             .then(
                 () => {
                     console.log("Mail sent with success !");
-                    setErrorMessage("Message sent with success !");
+                    updateSuccessMessage("Message sent with success !");
                     closeModal();
                 },
                 (error) => {
