@@ -58,28 +58,28 @@ const NavBar = () => {
         <>
             <header className="sticky top-0 z-10 hidden h-20 w-full items-center justify-between bg-white/75 px-4 backdrop-blur-xl dark:bg-gray-950/75 md:flex md:justify-around">
                 <div>
-                    <a href="#" onClick={() => handleNavItemClick(null)} className="select-none font-krona text-3xl dark:text-gray-50">
+                    <a href="#" aria-label="Return to the top of the homepage" onClick={() => handleNavItemClick(null)} className="select-none font-krona text-3xl dark:text-gray-50">
                         Bingo
                     </a>
                 </div>
                 <div className="hidden items-center gap-5 md:flex">
                     <nav className="flex gap-5 text-gray-600 dark:text-gray-200">
-                        <a href="#articles" onClick={() => handleNavItemClick("1")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                        <a href="#articles" aria-label="Check my articles" onClick={() => handleNavItemClick("1")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                             Articles
                         </a>
-                        <a href="#projects" onClick={() => handleNavItemClick("2")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                        <a href="#projects" aria-label="Check my projects" onClick={() => handleNavItemClick("2")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                             Projects
                         </a>
-                        <a href="#stacks" onClick={() => handleNavItemClick("3")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                        <a href="#stacks" aria-label="Check the tech stacks im using" onClick={() => handleNavItemClick("3")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                             Stacks
                         </a>
                     </nav>
                     <hr className="w-6 rotate-90 dark:border-gray-500" />
                     <div className="flex items-center gap-5">
-                        <button onClick={() => setIsDarkMode(!isDarkMode)}>
-                            <img src={isDarkMode ? darkModeIcon : lightModeIcon} alt="" />
+                        <button aria-label="Light/Dark mode toggle button" onClick={() => setIsDarkMode(!isDarkMode)}>
+                            <img src={isDarkMode ? darkModeIcon : lightModeIcon} alt="Light or Dark mode button icon" />
                         </button>
-                        <button onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
+                        <button aria-label="Contact me button to open contact form" onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
                             Contact Me
                         </button>
                     </div>
@@ -93,12 +93,12 @@ const NavBar = () => {
             <header className="fixed top-0 z-20 w-full bg-white/75 backdrop-blur-xl dark:bg-gray-950/75 md:hidden">
                 <div className="flex h-20 items-center justify-between px-5">
                     <div>
-                        <a href="#" onClick={() => handleNavItemClick(null)} className="select-none font-krona text-3xl dark:text-gray-50">
+                        <a href="#" aria-label="Return to the top of the homepage" onClick={() => handleNavItemClick(null)} className="select-none font-krona text-3xl dark:text-gray-50">
                             Bingo
                         </a>
                     </div>
                     <div className="flex items-center justify-center">
-                        <button onClick={handleBurgerClick} className="focus:outline-none ">
+                        <button aria-label="Light/Dark mode toggle button" onClick={handleBurgerClick} className="focus:outline-none ">
                             {burgerIcon ? <BurgerClose /> : <BurgerOpen />}
                         </button>
                     </div>
@@ -114,6 +114,7 @@ const NavBar = () => {
                             <nav className="flex flex-col gap-4 text-gray-600 dark:text-gray-300">
                                 <a
                                     href="#articles"
+                                    aria-label="Check my articles"
                                     onClick={() => {
                                         handleNavItemClick("1");
                                     }}
@@ -123,6 +124,7 @@ const NavBar = () => {
                                 </a>
                                 <a
                                     href="#projects"
+                                    aria-label="Check my projects"
                                     onClick={() => {
                                         handleNavItemClick("2");
                                     }}
@@ -132,6 +134,7 @@ const NavBar = () => {
                                 </a>
                                 <a
                                     href="#stacks"
+                                    aria-label="Check the tech stacks im using"
                                     onClick={() => {
                                         handleNavItemClick("3");
                                     }}
@@ -139,14 +142,14 @@ const NavBar = () => {
                                 >
                                     Stacks
                                 </a>
-                                <button onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
+                                <button aria-label="Contact me button to open contact form" onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
                                     Contact Me
                                 </button>
                             </nav>
                         </div>
                         <div className="flex w-1/2 items-end justify-end pb-2">
-                            <button onClick={() => setIsDarkMode(!isDarkMode)}>
-                                <img src={isDarkMode ? darkModeIcon : lightModeIcon} alt="" />
+                            <button aria-label="Light/Dark mode toggle button" onClick={() => setIsDarkMode(!isDarkMode)}>
+                                <img src={isDarkMode ? darkModeIcon : lightModeIcon} alt="Light or Dark mode button icon" />
                             </button>
                         </div>
                     </div>
@@ -157,7 +160,7 @@ const NavBar = () => {
                     <div className="w-full max-w-md rounded-lg bg-white/75 p-6 shadow-md backdrop-blur-xl dark:bg-gray-950/75 dark:shadow-gray-100/10">
                         <div className="mb-4 flex justify-between">
                             <h2 className="text-xl font-semibold dark:text-gray-50">Contact Me</h2>
-                            <button onClick={closeModal}>
+                            <button aria-label="Close mobile menu" onClick={closeModal}>
                                 <BurgerClose />
                             </button>
                         </div>

@@ -67,7 +67,7 @@ function ContactForm({ closeModal, updateSuccessMessage }) {
                 </label>
                 <textarea placeholder="I want to talk with you about ....." name="message" className="w-full rounded-lg border border-gray-500 bg-gray-50 p-2 focus:border-gray-900 focus:outline-none dark:border-transparent dark:bg-gray-700 dark:text-gray-50 dark:caret-white dark:focus:border dark:focus:border-gray-300" rows="7"></textarea>
             </div>
-            <button type="button" onClick={validateAndSendEmail} className="rounded-lg bg-gray-900 px-4 py-2  text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
+            <button aria-label="Contact form validating button" type="button" onClick={validateAndSendEmail} className="rounded-lg bg-gray-900 px-4 py-2  text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
                 Submit
             </button>
         </form>
