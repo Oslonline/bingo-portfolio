@@ -2,13 +2,13 @@
     {
         "title": "How I Discovered a Critical Vulnerability in a Leading UK Retail Giant’s System",
         "content": "In the realm of cybersecurity, the discovery of vulnerabilities is a critical aspect of enhancing system security and protecting sensitive data. My recent exploration into the digital infrastructure of a major UK retail chain, which I will refer to as “redacted.com” for confidentiality, led to an intriguing and significant discovery...",
-        "imageURL": "../articles/article-VulnUKBank.png",
+        "imageURL": "../articles/article-VulnUKBank.webp",
         "link": "https://medium.com/@cathreat/how-i-discovered-a-critical-vulnerability-in-a-leading-uk-retail-giants-system-bc4211c159a7"
     },
     {
         "title": "Node — Eval",
         "content": "The challenge has a success rate of 1% at the time of writing this mini-walkthrough, so I decided to write this to share my research. To succeed in this challenge, you must first trigger the inputs to see how the application works...",
-        "imageURL": "../articles/article-NodeEval.png",
+        "imageURL": "../articles/article-NodeEval.webp",
         "link": "https://medium.com/@bingops/node-eval-328719303134"
     }
 ]

@@ -1,4 +1,4 @@
-import MainImg from "../assets/images/main-img.jpg";
+import MainImg from "/main-img.webp";
 import { Github, Medium, Linkedin, Location } from "../components/icons";
 
 const Home = () => {
