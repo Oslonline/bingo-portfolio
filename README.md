@@ -17,6 +17,7 @@ Responsive, Light & Dark mode & Easy data change with json files. EmailJS contac
 **Start the development server:**
 `npm run dev`
 
+### Prod
 **Build for production:**
 `npm run build`
 
