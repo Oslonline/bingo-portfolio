@@ -15,7 +15,7 @@ function Project({ project, index }) {
                     <p className="text-sm text-gray-600 dark:text-gray-300"> {content} </p>
                     <div className="flex flex-wrap gap-1">
                         {stacks.map((stack, index) => (
-                            <span key={index} className="rounded-full bg-gray-200 px-4 py-1 text-sm text-gray-600 dark:bg-gray-700 dark:text-gray-200">
+                            <span key={index} className="select-none rounded-full bg-gray-200 px-4 py-1 text-sm text-gray-600 dark:bg-gray-700 dark:text-gray-200">
                                 {stack}
                             </span>
                         ))}

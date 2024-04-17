@@ -168,7 +168,7 @@ const NavBar = () => {
             </header>
             {modalIsOpen && (
                 <div className="fixed left-0 top-0 z-20 flex h-full w-full items-center justify-center backdrop-blur-xl">
-                    <div className="absolute left-1/2 top-1/2 w-11/12 max-w-md -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/75 p-6 shadow-md backdrop-blur-xl dark:bg-gray-950/75 dark:shadow-gray-100/10" ref={modalRef}>
+                    <div className="absolute left-1/2 top-1/2 w-11/12 max-w-md -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/75 p-6 shadow-md backdrop-blur-xl dark:bg-gray-950/75 dark:shadow-gray-500/10" ref={modalRef}>
                         <div className="flex flex-col">
                             <div className="mb-4 flex justify-between">
                                 <h2 className="text-xl font-semibold dark:text-gray-50">Contact Me</h2>
