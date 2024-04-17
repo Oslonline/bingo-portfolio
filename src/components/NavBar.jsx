@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import darkModeIcon from "../assets/icons/dark-mode.svg";
 import lightModeIcon from "../assets/icons/light-mode.svg";
 import { BurgerOpen, BurgerClose } from "./icons";
@@ -14,6 +14,7 @@ const NavBar = () => {
     });
     const [showBurgerMenu, setShowBurgerMenu] = useState(false);
     const [burgerIcon, setBurgerIcon] = useState(false);
+    const modalRef = useRef(null);
 
     useEffect(() => {
         localStorage.setItem("darkMode", JSON.stringify(isDarkMode));
@@ -23,6 +24,16 @@ const NavBar = () => {
         } else {
             document.documentElement.classList.remove("dark");
         }
+
+        const handleClickOutside = (event) => {
+            if (modalRef.current && !modalRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
     }, [isDarkMode]);
 
     const updateSuccessMessage = (message) => {
@@ -109,7 +120,7 @@ const NavBar = () => {
                     )}
                 </div>
                 <div className={`flex w-full flex-col shadow-md transition-all duration-300 ${showBurgerMenu ? "opacity-100" : "pointer-events-none hidden opacity-0"}`}>
-                    <div className="flex w-full p-5">
+                    <div className="flex w-full p-5" ref={modalRef}>
                         <div className="flex w-1/2">
                             <nav className="flex flex-col gap-4 text-gray-600 dark:text-gray-300">
                                 <a
@@ -156,15 +167,17 @@ const NavBar = () => {
                 </div>
             </header>
             {modalIsOpen && (
-                <div className="fixed left-0 top-0 z-20 flex h-full w-full items-center justify-center p-4 backdrop-blur-xl md:mt-20 md:p-0">
-                    <div className="w-full max-w-md rounded-lg bg-white/75 p-6 shadow-md backdrop-blur-xl dark:bg-gray-950/75 dark:shadow-gray-100/10">
-                        <div className="mb-4 flex justify-between">
-                            <h2 className="text-xl font-semibold dark:text-gray-50">Contact Me</h2>
-                            <button aria-label="Close mobile menu" onClick={closeModal}>
-                                <BurgerClose />
-                            </button>
+                <div className="fixed left-0 top-0 z-20 flex h-full w-full items-center justify-center backdrop-blur-xl">
+                    <div className="absolute left-1/2 top-1/2 w-11/12 max-w-md -translate-x-1/2 -translate-y-1/2 transform rounded-lg bg-white/75 p-6 shadow-md backdrop-blur-xl dark:bg-gray-950/75 dark:shadow-gray-100/10" ref={modalRef}>
+                        <div className="flex flex-col">
+                            <div className="mb-4 flex justify-between">
+                                <h2 className="text-xl font-semibold dark:text-gray-50">Contact Me</h2>
+                                <button aria-label="Close mobile menu" onClick={closeModal}>
+                                    <BurgerClose />
+                                </button>
+                            </div>
+                            <ContactForm updateSuccessMessage={updateSuccessMessage} closeModal={closeModal} />
                         </div>
-                        <ContactForm updateSuccessMessage={updateSuccessMessage} closeModal={closeModal} />
                     </div>
                 </div>
             )}
