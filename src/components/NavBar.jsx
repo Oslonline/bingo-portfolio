@@ -96,7 +96,7 @@ const NavBar = () => {
                     </div>
                 </div>
                 {successMessage && (
-                    <div className="rounded-lgpx-4 absolute bottom-0 left-1/2 z-50 flex -translate-x-1/2 translate-y-20 transform items-center rounded-lg border-2 border-green-500 bg-white/80 px-4 py-5 text-green-500 backdrop-blur-lg  dark:border-none dark:bg-green-500/80 dark:text-gray-50">
+                    <div className="absolute bottom-0 left-1/2 z-50 flex -translate-x-1/2 translate-y-20 transform items-center rounded-lg border-2 border-green-500 bg-white/80 px-4 py-5 text-green-500 backdrop-blur-lg  dark:border-none dark:bg-green-500/80 dark:text-gray-50">
                         <p>{successMessage}</p>
                     </div>
                 )}
@@ -114,8 +114,8 @@ const NavBar = () => {
                         </button>
                     </div>
                     {successMessage && (
-                        <div className="rounded-lgpx-4 absolute bottom-0 left-1/2 z-50 flex -translate-x-1/2 translate-y-20 transform items-center rounded-lg border-2 border-green-500 bg-white/80 px-4 py-5 text-green-500 backdrop-blur-lg  dark:border-none dark:bg-green-500/80 dark:text-gray-50">
-                            <p>{successMessage}</p>
+                        <div className="absolute bottom-0 left-1/2 z-50 flex w-max -translate-x-1/2 translate-y-14 transform items-center rounded-lg border-2 border-green-500 bg-white/90 px-2 py-3 text-center text-green-500 backdrop-blur-lg  dark:border-none dark:bg-green-500/80 dark:text-gray-50">
+                            <p>{"Message sent with success !"}</p>
                         </div>
                     )}
                 </div>
