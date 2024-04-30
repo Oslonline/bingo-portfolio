@@ -32,8 +32,8 @@ function ContactForm({ closeModal, updateSuccessMessage }) {
         setIsSubmitting(true);
 
         emailjs
-            .sendForm("Gmail_portfolio", "template_1puw1na", form.current, {
-                publicKey: "xYSscmGX_B3W6WcjC",
+            .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
+                publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
             })
             .then(
                 () => {
