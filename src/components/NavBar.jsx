@@ -74,14 +74,14 @@ const NavBar = () => {
                     </a>
                 </div>
                 <div className="hidden items-center gap-5 md:flex">
-                    <nav className="flex gap-5 text-gray-600 dark:text-gray-200">
-                        <a href="#articles" aria-label="Check my articles" onClick={() => handleNavItemClick("1")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                    <nav className="flex gap-5 text-gray-600 dark:text-gray-300">
+                        <a href="#articles" aria-label="Check my articles" onClick={() => handleNavItemClick("1")} className={`scroll-smooth rounded-xl px-3 py-2 duration-200 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                             Articles
                         </a>
-                        <a href="#projects" aria-label="Check my projects" onClick={() => handleNavItemClick("2")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                        <a href="#projects" aria-label="Check my projects" onClick={() => handleNavItemClick("2")} className={`scroll-smooth rounded-xl px-3 py-2 duration-200 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                             Projects
                         </a>
-                        <a href="#stacks" aria-label="Check the tech stacks im using" onClick={() => handleNavItemClick("3")} className={`scroll-smooth rounded-xl px-3 py-2 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
+                        <a href="#stacks" aria-label="Check the tech stacks im using" onClick={() => handleNavItemClick("3")} className={`scroll-smooth rounded-xl px-3 py-2 duration-200 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}>
                             Stacks
                         </a>
                     </nav>
@@ -90,7 +90,7 @@ const NavBar = () => {
                         <button aria-label="Light/Dark mode toggle button" onClick={() => setIsDarkMode(!isDarkMode)}>
                             <img src={isDarkMode ? darkModeIcon : lightModeIcon} alt="Light or Dark mode button icon" />
                         </button>
-                        <button aria-label="Contact me button to open contact form" onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
+                        <button aria-label="Contact me button to open contact form" onClick={openModal} className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 duration-200 hover:bg-gray-300 hover:text-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50">
                             Contact Me
                         </button>
                     </div>
@@ -109,7 +109,7 @@ const NavBar = () => {
                         </a>
                     </div>
                     <div className="flex items-center justify-center">
-                        <button aria-label="Light/Dark mode toggle button" onClick={handleBurgerClick} className="focus:outline-none ">
+                        <button aria-label="Light/Dark mode toggle button" onClick={handleBurgerClick} className="focus:outline-none">
                             {burgerIcon ? <BurgerClose /> : <BurgerOpen />}
                         </button>
                     </div>
