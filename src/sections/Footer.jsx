@@ -1,4 +1,4 @@
-import { Github, Medium, Linkedin, X, Thm, Htb } from "../components/icons";
+import { Github, Medium, Linkedin, Thm, Htb } from "../components/icons";
 
 function Footer() {
     return (

@@ -11,12 +11,12 @@ function Python() {
             />
             <defs>
                 <linearGradient id="paint0_linear_751_7849" x1="9.60996" y1="8.94811" x2="59.1669" y2="58.0107" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#387EB8" />
-                    <stop offset="1" stop-color="#366994" />
+                    <stop stopColor="#387EB8" />
+                    <stop offset="1" stopColor="#366994" />
                 </linearGradient>
                 <linearGradient id="paint1_linear_751_7849" x1="40.0281" y1="40.4532" x2="93.2466" y2="90.7623" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#FFE052" />
-                    <stop offset="1" stop-color="#FFC331" />
+                    <stop stopColor="#FFE052" />
+                    <stop offset="1" stopColor="#FFC331" />
                 </linearGradient>
             </defs>
         </svg>
