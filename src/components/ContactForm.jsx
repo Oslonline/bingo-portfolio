@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 function ContactForm({ closeModal, updateSuccessMessage }) {
@@ -10,7 +10,7 @@ function ContactForm({ closeModal, updateSuccessMessage }) {
         const formData = new FormData(form.current);
         const userName = formData.get("user_name");
         const userEmail = formData.get("user_email");
-        const emailPattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+        const emailPattern = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
         const message = formData.get("message");
 
         if (!userName || !userEmail || !message) {

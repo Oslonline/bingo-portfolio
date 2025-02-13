@@ -7,8 +7,8 @@ function Grafana() {
             />
             <defs>
                 <linearGradient id="paint0_linear_751_7998" x1="50.5191" y1="127.024" x2="50.5191" y2="11.3411" gradientUnits="userSpaceOnUse">
-                    <stop stop-color="#FFF100" />
-                    <stop offset="1" stop-color="#F05A28" />
+                    <stop stopColor="#FFF100" />
+                    <stop offset="1" stopColor="#F05A28" />
                 </linearGradient>
             </defs>
         </svg>
