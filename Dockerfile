@@ -6,6 +6,8 @@ ENV APP_DIR=/app
 
 USER root
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+# hadolint ignore=DL3008
 RUN set -x \
     && apt-get update  \
     && apt-get install -y --no-install-recommends \
@@ -20,7 +22,6 @@ RUN set -x \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Node.js
 RUN set -x \
     && curl -fsSL https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz | tar -xJ \
     && mv node-v$NODE_VERSION-linux-x64 /usr/local/node \
@@ -28,12 +29,14 @@ RUN set -x \
     && ln -s /usr/local/node/bin/npm /usr/bin/npm \
     && ln -s /usr/local/node/bin/npx /usr/bin/npx
 
-# Install Caddy
-RUN curl -fsSL https://github.com/caddyserver/caddy/releases/download/${CADDY_VERSION}/caddy_${CADDY_VERSION#v}_linux_amd64.tar.gz | tar -xz \
-    && mv caddy /usr/bin/caddy \
-    && chmod +x /usr/bin/caddy
+RUN curl -fsSL https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz -o node.tar.xz \
+    && tar -xJf node.tar.xz \
+    && mv node-v$NODE_VERSION-linux-x64 /usr/local/node \
+    && ln -s /usr/local/node/bin/node /usr/bin/node \
+    && ln -s /usr/local/node/bin/npm /usr/bin/npm \
+    && ln -s /usr/local/node/bin/npx /usr/bin/npx \
+    && rm node.tar.xz
 
-# Clone and build app
 WORKDIR ${APP_DIR}
 
 RUN set -x \
@@ -51,7 +54,7 @@ RUN set -x \
   && mkdir -p /etc/caddy \
   && useradd --comment 'Portfolio User' --create-home --uid 1337 --shell /bin/sh portfolio \
   && chown -R portfolio:portfolio ${APP_DIR} /etc/caddy \
-  && echo ":80\nroot * ${APP_DIR}/dist\nfile_server" > /etc/caddy/Caddyfile
+  && printf ":80\nroot * %s/dist\nfile_server\n" "${APP_DIR}" > /etc/caddy/Caddyfile
 
 USER portfolio
 
