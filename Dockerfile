@@ -22,13 +22,6 @@ RUN set -x \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-RUN set -x \
-    && curl -fsSL https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz | tar -xJ \
-    && mv node-v$NODE_VERSION-linux-x64 /usr/local/node \
-    && ln -s /usr/local/node/bin/node /usr/bin/node \
-    && ln -s /usr/local/node/bin/npm /usr/bin/npm \
-    && ln -s /usr/local/node/bin/npx /usr/bin/npx
-
 RUN curl -fsSL https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-x64.tar.xz -o node.tar.xz \
     && tar -xJf node.tar.xz \
     && mv node-v$NODE_VERSION-linux-x64 /usr/local/node \
@@ -36,6 +29,12 @@ RUN curl -fsSL https://nodejs.org/dist/v$NODE_VERSION/node-v$NODE_VERSION-linux-
     && ln -s /usr/local/node/bin/npm /usr/bin/npm \
     && ln -s /usr/local/node/bin/npx /usr/bin/npx \
     && rm node.tar.xz
+
+RUN curl -fsSL "https://github.com/caddyserver/caddy/releases/download/${CADDY_VERSION}/caddy_${CADDY_VERSION#v}_linux_amd64.tar.gz" -o caddy.tar.gz \
+    && tar -xzf caddy.tar.gz \
+    && mv caddy /usr/bin/caddy \
+    && chmod +x /usr/bin/caddy \
+    && rm caddy.tar.gz
 
 WORKDIR ${APP_DIR}
 
