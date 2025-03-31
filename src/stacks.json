@@ -12,7 +12,7 @@
         "stacks": ["docker", "kubernetes"]
     },
     {
-        "ctgtitle": "Monitoring",
+        "ctgtitle": "Monitoring/Alerting & Logging",
         "stacks": ["prometheus", "grafana", "elastic"]
     },
     {
