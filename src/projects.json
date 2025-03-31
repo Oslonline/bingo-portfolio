@@ -4,7 +4,7 @@
         "content": "k8slab is designed to simplify the process of setting up a Kubernetes cluster in a homelab environment, leveraging Proxmox VMs for creating both master and worker nodes. This project utilizes Terraform for infrastructure provisioning and Ansible for configuration management, ensuring that your Kubernetes nodes are ready to go with minimal manual intervention.",
         "imageURL": "../projects/k8slab.webp",
         "stacks": ["ansible", "terraform", "kubernetes"],
-        "link": "https://github.com/cathreat/k8slab"
+        "link": "https://github.com/0xBingo/k8slab"
     },
     {
         "title": "BugBounty-Toolbox",
