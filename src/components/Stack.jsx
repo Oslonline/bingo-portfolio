@@ -1,4 +1,4 @@
-import { Ansible, Aws, Azure, Burpsuite, Docker, Elastic, GCloud, Git, Gitlab, Go, Grafana, Jenkins, Kubernetes, Mariadb, Metasploit, Mongodb, Mysql, Nmap, Nodejs, Postgresql, Prometheus, Python, Terraform, Wireshark } from "./stackIcons";
+import { Ansible, Aws, Azure, Burpsuite, Docker, Elastic, GCloud, Git, Github, Gitlab, Go, Grafana, Helm, Jenkins, Kubernetes, Mariadb, Metasploit, Mongodb, Mysql, Nmap, Nodejs, Postgresql, Prometheus, Proxmox, Python, Terraform, Wireshark } from "./stackIcons";
 
 function Stack({ project }) {
     const { ctgtitle, stacks } = project;
@@ -12,9 +12,11 @@ function Stack({ project }) {
         elastic: Elastic,
         gcloud: GCloud,
         git: Git,
+        github: Github,
         gitlab: Gitlab,
         go: Go,
         grafana: Grafana,
+        helm: Helm,
         jenkins: Jenkins,
         kubernetes: Kubernetes,
         mariadb: Mariadb,
@@ -26,6 +28,7 @@ function Stack({ project }) {
         postgresql: Postgresql,
         python: Python,
         prometheus: Prometheus,
+        proxmox: Proxmox,
         terraform: Terraform,
         wireshark: Wireshark,
     };
