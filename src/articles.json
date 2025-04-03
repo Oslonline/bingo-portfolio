@@ -13,7 +13,7 @@
     },
     {
         "title": "Node - Eval",
-        "content": "A walkthrough of one of Root-Me’s toughest Node.js challenges, showcasing how to exploit an eval vulnerability to gain access to hidden files and ultimately retrieve the flag",
+        "content": "A walkthrough of one of Root-Me’s Node.js challenges, showcasing how to exploit an eval vulnerability to gain access to hidden files and ultimately retrieve the flag",
         "imageURL": "../articles/article-node-eval.webp",
         "link": "https://blog.bingops.com/blog/node-eval/"
     }
