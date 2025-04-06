@@ -109,7 +109,7 @@ const NavBar = () => {
                         </a>
                     </div>
                     <div className="flex items-center justify-center">
-                        <button aria-label="Light/Dark mode toggle button" onClick={handleBurgerClick} className="focus:outline-none">
+                        <button aria-label="Light/Dark mode toggle button" onClick={handleBurgerClick} className="focus:outline-hidden">
                             {burgerIcon ? <BurgerClose /> : <BurgerOpen />}
                         </button>
                     </div>
