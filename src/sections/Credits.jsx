@@ -1,6 +1,6 @@
 function Credits() {
   return (
-    <div className="w-full bg-gray-50 p-4 text-center dark:bg-gray-900">
+    <div className="w-full bg-gray-50 p-2 text-sm text-center dark:bg-gray-900">
       <p className="text-gray-600 dark:text-gray-400">
         Made by{" "}
         <a
