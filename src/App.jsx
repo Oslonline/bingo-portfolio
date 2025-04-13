@@ -1,11 +1,11 @@
 import NavBar from "./components/NavBar";
-import { Home, Articles, Projects, Stacks, Footer, Credits } from "./sections";
+import { Hero, Articles, Projects, Stacks, Footer, Credits } from "./sections";
 
 function App() {
   return (
     <div className="bg-white dark:bg-gray-950">
       <NavBar />
-      <Home />
+      <Hero />
       <span id="articles"></span>
       <Articles />
       <span id="projects"></span>
