@@ -22,6 +22,7 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
+
   *,
   ::after,
   ::before,
@@ -30,17 +31,18 @@
     border-color: var(--color-gray-200, currentcolor);
   }
 
-  button:hover, a:hover {
+  button:hover,
+  a:hover {
     cursor: pointer;
   }
 }
 
 @font-face {
-    font-family: 'KronaOne';
-    src: url('./assets/font/KronaOne.ttf');
+  font-family: 'KronaOne';
+  src: url('./assets/font/KronaOne.ttf');
 }
 
 body,
 html {
-    font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif;
 }

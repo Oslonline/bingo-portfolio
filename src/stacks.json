@@ -1,34 +1,34 @@
 [
-    {
-        "ctgtitle": "SCM & CI/CD",
-        "stacks": ["git", "github", "gitlab", "jenkins"]
-    },
-    {
-        "ctgtitle": "Infrastructure as Code",
-        "stacks": ["ansible", "terraform", "helm"]
-    },
-    {
-        "ctgtitle": "Containers & Orchestration",
-        "stacks": ["docker", "kubernetes"]
-    },
-    {
-        "ctgtitle": "Monitoring/Alerting & Logging",
-        "stacks": ["prometheus", "grafana", "elastic"]
-    },
-    {
-        "ctgtitle": "Backend Development",
-        "stacks": ["python", "nodejs", "go"]
-    },
-    {
-        "ctgtitle": "Databases Systems",
-        "stacks": ["postgresql", "mysql", "mariadb", "mongodb"]
-    },
-    {
-        "ctgtitle": "Private & Public Cloud Computing",
-        "stacks": ["proxmox","aws", "azure", "gcloud"]
-    },
-    {
-        "ctgtitle": "Pentesting & Vulnerability Scanning",
-        "stacks": ["metasploit", "burpsuite", "nmap", "wireshark"]
-    }
+  {
+    "ctgtitle": "SCM & CI/CD",
+    "stacks": ["git", "github", "gitlab", "jenkins"]
+  },
+  {
+    "ctgtitle": "Infrastructure as Code",
+    "stacks": ["ansible", "terraform", "helm"]
+  },
+  {
+    "ctgtitle": "Containers & Orchestration",
+    "stacks": ["docker", "kubernetes"]
+  },
+  {
+    "ctgtitle": "Monitoring/Alerting & Logging",
+    "stacks": ["prometheus", "grafana", "elastic"]
+  },
+  {
+    "ctgtitle": "Backend Development",
+    "stacks": ["python", "nodejs", "go"]
+  },
+  {
+    "ctgtitle": "Databases Systems",
+    "stacks": ["postgresql", "mysql", "mariadb", "mongodb"]
+  },
+  {
+    "ctgtitle": "Private & Public Cloud Computing",
+    "stacks": ["proxmox", "aws", "azure", "gcloud"]
+  },
+  {
+    "ctgtitle": "Pentesting & Vulnerability Scanning",
+    "stacks": ["metasploit", "burpsuite", "nmap", "wireshark"]
+  }
 ]

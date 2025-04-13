@@ -1,32 +1,60 @@
-import { Link } from "./icons";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
-function Project({ project, index }) {
-    const { title, content, imageURL, stacks, link } = project;
-    const isEven = index % 2 === 0;
+function Project({ project, isEven }) {
+  const { title, content, imageURL, stacks, link } = project;
 
-    return (
-        <div className={`flex w-full flex-col rounded-xl bg-white shadow-md dark:bg-gray-800 ${isEven ? "flex-row-reverse md:flex-row" : "flex-col md:flex-row-reverse"}`}>
-            <div className={`flex min-h-full items-center justify-center rounded-t-xl bg-gray-50 p-4 md:p-10 dark:bg-gray-700 md:w-1/2 ${isEven ? "md:rounded-l-xl md:rounded-r-none" : "md:rounded-l-none md:rounded-r-xl"}`}>
-                <img className="rounded-xl" src={imageURL} alt="Project image (depending on the project subject)" />
-            </div>
-            <div className={`rounded-xl bg-gray-50 p-6 dark:bg-gray-800 md:flex md:w-1/2 ${isEven ? "md:rounded-r-xl" : "md:rounded-l-xl"}`}>
-                <div className={`flex flex-col justify-center gap-4 ${isEven ? "md:items-start md:text-start" : "md:items-end md:text-end"}`}>
-                    <h1 className="text-font-900 text-2xl font-semibold dark:text-gray-50"> {title} </h1>
-                    <p className="text-sm text-gray-600 dark:text-gray-300"> {content} </p>
-                    <div className="flex flex-wrap gap-1">
-                        {stacks.map((stack, index) => (
-                            <span key={index} className="select-none rounded-full bg-gray-200 px-4 py-1 text-sm text-gray-600 dark:bg-gray-700 dark:text-gray-200">
-                                {stack}
-                            </span>
-                        ))}
-                    </div>
-                    <a href={link} target="_blank" aria-label="Check my project link">
-                        <Link />
-                    </a>
-                </div>
-            </div>
+  return (
+    <div
+      className={`flex w-full rounded-xl bg-white shadow-md dark:bg-gray-800 flex-col`}
+    >
+      <img
+        className={`max-h-36 md:max-h-48 xl:max-h-56 2xl:max-h-60 w-full object-cover object-center rounded-t-xl`}
+        loading="lazy"
+        srcSet={`${imageURL} 2x`}
+        src={imageURL}
+        alt="Project image (depending on the project subject)"
+      />
+      <div
+        className={`rounded-xl bg-gray-50 p-4 dark:bg-gray-800 md:flex ${isEven ? "md:rounded-l-xl" : "md:rounded-r-xl"}`}
+      >
+        <div
+          className={`flex flex-col justify-center gap-3 ${isEven ? "md:items-end md:text-end" : "md:items-start md:text-start"}`}
+        >
+          <span
+            className={`flex items-center gap-2 w-full ${isEven ? "flex-row-reverse" : ""}`}
+          >
+            <h1 className="text-font-900 text-2xl font-semibold dark:text-gray-50">
+              {title}
+            </h1>
+            <a
+              className="text-2xl hover:text-gray-800 text-gray-500 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-150"
+              href={link}
+              target="_blank"
+              aria-label="Check my project link"
+            >
+              {link.includes("github.com") ? <FaGithub /> : <FiExternalLink />}
+            </a>
+          </span>
+          <p className="text-sm text-gray-600 line-clamp-3 dark:text-gray-300">
+            {content}
+          </p>
+          <div
+            className={`flex flex-wrap gap-1 max-w-11/12 ${isEven ? "justify-end" : "justify-start"}`}
+          >
+            {stacks.map((stack, index) => (
+              <span
+                key={index}
+                className="select-none rounded-full bg-gray-200 xl:px-4 px-2 py-0.5 xl:py-1 text-xs xl:text-sm text-gray-600 dark:bg-gray-700 dark:text-gray-200"
+              >
+                {stack}
+              </span>
+            ))}
+          </div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Project;
