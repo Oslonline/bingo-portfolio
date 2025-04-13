@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Article from "../components/Article";
 import articlesData from "../articles.json";
 
