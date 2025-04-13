@@ -1,31 +1,34 @@
-import { Link } from "./icons";
+import { FiExternalLink } from "react-icons/fi";
 
 function Article({ article }) {
   const { title, content, imageURL, link } = article;
 
   return (
-    <div className="w-full flex-col items-center justify-around gap-8 rounded-lg bg-white p-4 shadow-md dark:bg-gray-800 md:flex md:flex-row">
-      <div className="flex w-full sm:w-3/5 lg:w-1/5 items-center justify-center">
-        <img
-          className="w-full rounded-md"
-          src={imageURL}
-          alt="Article image (depending on the article subject)"
-        />
+    <a
+      href={link}
+      className="w-full rounded-lg group relative hover:shadow-lg duration-75 dark:shadow-gray-800 focus:shadow-lg outline-none"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <div
+        className="relative flex min-h-[200px] flex-col justify-end gap-2 rounded-lg bg-cover bg-center p-4"
+        style={{ backgroundImage: `url(${imageURL})` }}
+      >
+        <div className="absolute inset-0 rounded-lg bg-white/60 dark:bg-black/60" />
+        <div className="relative z-10 flex flex-col gap-2 h-full">
+          <h3 className="text-lg font-bold dark:text-gray-200 text-gray-800 flex items-start justify-between gap-2">
+            {title}
+            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+              <FiExternalLink className="inline-block align-text-bottom dark:text-gray-200" />
+            </span>
+          </h3>
+          <p className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2">
+            {content}
+          </p>
+        </div>
       </div>
-      <div className="flex w-full md:w-4/5 flex-col justify-evenly gap-4 py-5 md:py-0">
-        <h1 className="w-full text-xl font-semibold text-gray-900 dark:text-gray-50">
-          {title}
-        </h1>
-        <p className="w-full text-sm text-gray-600 dark:text-gray-300">
-          {content}
-        </p>
-      </div>
-      <div className="flex">
-        <a href={link} target="_blank" aria-label="Check my article link">
-          <Link />
-        </a>
-      </div>
-    </div>
+      {/* <span className="absolute inset-0 rounded-lg border-2 border-transparent group-hover:border-gray-900 dark:group-hover:border-gray-400 pointer-events-none transition-colors" /> */}
+    </a>
   );
 }
 
