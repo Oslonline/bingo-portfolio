@@ -1,4 +1,5 @@
-import { Link } from "./icons";
+import { FaGithub } from "react-icons/fa";
+import { FiExternalLink } from "react-icons/fi";
 
 function Project({ project, isEven }) {
   const { title, content, imageURL, stacks, link } = project;
@@ -26,7 +27,9 @@ function Project({ project, isEven }) {
           <p className="text-sm text-gray-600 line-clamp-3 dark:text-gray-300">
             {content}
           </p>
-          <div className="flex flex-wrap gap-1">
+          <div
+            className={`flex flex-wrap gap-1 max-w-11/12 ${isEven ? "justify-end" : "justify-start"}`}
+          >
             {stacks.map((stack, index) => (
               <span
                 key={index}
@@ -36,8 +39,13 @@ function Project({ project, isEven }) {
               </span>
             ))}
           </div>
-          <a href={link} target="_blank" aria-label="Check my project link">
-            <Link />
+          <a
+            className="text-3xl hover:text-gray-800 text-gray-500 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-150"
+            href={link}
+            target="_blank"
+            aria-label="Check my project link"
+          >
+            {link.includes("github.com") ? <FaGithub /> : <FiExternalLink />}
           </a>
         </div>
       </div>
