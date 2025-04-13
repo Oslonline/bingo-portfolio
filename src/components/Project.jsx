@@ -21,9 +21,21 @@ function Project({ project, isEven }) {
         <div
           className={`flex flex-col justify-center gap-3 ${isEven ? "md:items-end md:text-end" : "md:items-start md:text-start"}`}
         >
-          <h1 className="text-font-900 text-2xl font-semibold dark:text-gray-50">
-            {title}
-          </h1>
+          <span
+            className={`flex items-center gap-2 w-full ${isEven ? "flex-row-reverse" : ""}`}
+          >
+            <h1 className="text-font-900 text-2xl font-semibold dark:text-gray-50">
+              {title}
+            </h1>
+            <a
+              className="text-2xl hover:text-gray-800 text-gray-500 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-150"
+              href={link}
+              target="_blank"
+              aria-label="Check my project link"
+            >
+              {link.includes("github.com") ? <FaGithub /> : <FiExternalLink />}
+            </a>
+          </span>
           <p className="text-sm text-gray-600 line-clamp-3 dark:text-gray-300">
             {content}
           </p>
@@ -39,14 +51,6 @@ function Project({ project, isEven }) {
               </span>
             ))}
           </div>
-          <a
-            className="text-3xl hover:text-gray-800 text-gray-500 dark:text-gray-400 dark:hover:text-gray-300 transition-colors duration-150"
-            href={link}
-            target="_blank"
-            aria-label="Check my project link"
-          >
-            {link.includes("github.com") ? <FaGithub /> : <FiExternalLink />}
-          </a>
         </div>
       </div>
     </div>
