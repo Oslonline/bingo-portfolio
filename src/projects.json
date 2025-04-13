@@ -1,16 +1,23 @@
 [
     {
-        "title": "k8slab: A Homelab Kubernetes Cluster Setup",
-        "content": "k8slab is designed to simplify the process of setting up a Kubernetes cluster in a homelab environment, leveraging Proxmox VMs for creating both master and worker nodes. This project utilizes Terraform for infrastructure provisioning and Ansible for configuration management, ensuring that your Kubernetes nodes are ready to go with minimal manual intervention.",
+        "title": "k8slab",
+        "content": "k8slab is designed to simplify the process of setting up a Kubernetes cluster in a homelab environment, leveraging Proxmox VMs for creating both master and worker nodes. This project utilizes Terraform for infrastructure provisioning and Ansible for configuration management, ensuring that your Kubernetes nodes are ready to go with minimal manual intervention",
         "imageURL": "../projects/k8slab.webp",
         "stacks": ["ansible", "terraform", "kubernetes"],
-        "link": "https://github.com/cathreat/k8slab"
+        "link": "https://github.com/0xBingo/k8slab"
     },
     {
-        "title": "BugBounty-Toolbox",
-        "content": "BugBounty-Toolbox automates the setup and configuration of various tools and utilities commonly used in bug bounty hunting. It includes playbooks and roles for managing SSH configurations, installing utils, and opensource pentesting tools.",
-        "imageURL": "../projects/bugbounty-toolbox.webp",
-        "stacks": ["ansible"],
-        "link": "https://github.com/0xBingo/bugbounty-toolbox"
+        "title": "bingops.com-provisioning",
+        "content": "This Ansible project automates the deployment of a React-based portfolio website at bingops.com and blog at blog.bingops.com on my Proxmox server. It configures the server using a Cloudflare tunnel, NGINX, and deploys both web applications",
+        "imageURL": "../projects/bingops.com-provisioning.webp",
+        "stacks": ["ansible", "terraform"],
+        "link": "https://github.com/bingops-com/bingops.com-provisioning"
+    },
+    {
+        "title": "monitoring-provisioning",
+        "content": "This project sets up a complete monitoring infrastructure, fully automated with Terraform and Ansible, deployed in a Proxmox environment. It provisions virtual machines for metrics, logs, and visualization using a VM template, and configures Prometheus, Alertmanager, Grafana, Elasticsearch, Logstash, and Kibana",
+        "imageURL": "../projects/monitoring-provisioning.webp",
+        "stacks": ["ansible", "terraform", "grafana", "prometheus", "alertmanager", "elasticsearch"],
+        "link": "https://github.com/bingops-com/monitoring-provisioning"
     }
 ]

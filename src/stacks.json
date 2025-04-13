@@ -1,18 +1,18 @@
 [
     {
         "ctgtitle": "SCM & CI/CD",
-        "stacks": ["git", "gitlab", "jenkins"]
+        "stacks": ["git", "github", "gitlab", "jenkins"]
     },
     {
         "ctgtitle": "Infrastructure as Code",
-        "stacks": ["terraform", "ansible"]
+        "stacks": ["ansible", "terraform", "helm"]
     },
     {
         "ctgtitle": "Containers & Orchestration",
         "stacks": ["docker", "kubernetes"]
     },
     {
-        "ctgtitle": "Monitoring",
+        "ctgtitle": "Monitoring/Alerting & Logging",
         "stacks": ["prometheus", "grafana", "elastic"]
     },
     {
@@ -20,15 +20,15 @@
         "stacks": ["python", "nodejs", "go"]
     },
     {
-        "ctgtitle": "Databases Management",
+        "ctgtitle": "Databases Systems",
         "stacks": ["postgresql", "mysql", "mariadb", "mongodb"]
     },
     {
-        "ctgtitle": "Cloud Computing",
-        "stacks": ["aws", "azure", "gcloud"]
+        "ctgtitle": "Private & Public Cloud Computing",
+        "stacks": ["proxmox","aws", "azure", "gcloud"]
     },
     {
-        "ctgtitle": "Pentesting",
+        "ctgtitle": "Pentesting & Vulnerability Scanning",
         "stacks": ["metasploit", "burpsuite", "nmap", "wireshark"]
     }
 ]
