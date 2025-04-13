@@ -1,4 +1,4 @@
-import { Github, Medium, Linkedin, Thm, Htb } from "../components/icons";
+import { Github, Linkedin, Thm, Htb } from "../components/icons";
 
 function Footer() {
   return (
@@ -18,13 +18,6 @@ function Footer() {
             aria-label="Check my Github profile"
           >
             <Github />
-          </a>
-          <a
-            href="https://medium.com/@bingops"
-            target="_blank"
-            aria-label="Check my Medium profile"
-          >
-            <Medium />
           </a>
           <a
             href="https://www.linkedin.com/in/corentin-guyon/"

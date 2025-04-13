@@ -1,5 +1,5 @@
 import MainImg from "/main-img.webp";
-import { Github, Medium, Linkedin, Location } from "../components/icons";
+import { Github, Linkedin, Location } from "../components/icons";
 
 const Home = () => {
   return (
@@ -61,13 +61,6 @@ const Home = () => {
             aria-label="Check my Github profile"
           >
             <Github />
-          </a>
-          <a
-            href="https://medium.com/@bingops"
-            target="_blank"
-            aria-label="Check my Medium profile"
-          >
-            <Medium />
           </a>
           <a
             href="https://www.linkedin.com/in/corentin-guyon/"
