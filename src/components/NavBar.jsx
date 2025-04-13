@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from "react";
-import darkModeIcon from "../assets/icons/dark-mode.svg";
-import lightModeIcon from "../assets/icons/light-mode.svg";
 import { BurgerOpen, BurgerClose } from "./icons";
 import ContactForm from "./ContactForm";
+import { GoArrowUpRight } from "react-icons/go";
+import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 
 const NavBar = () => {
   const [successMessage, setSuccessMessage] = useState("");
@@ -14,6 +14,7 @@ const NavBar = () => {
   });
   const [showBurgerMenu, setShowBurgerMenu] = useState(false);
   const [burgerIcon, setBurgerIcon] = useState(false);
+  const [isRotating, setIsRotating] = useState(false);
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -65,9 +66,15 @@ const NavBar = () => {
     setIsOpen(false);
   };
 
+  const handleModeToggle = () => {
+    setIsDarkMode(!isDarkMode);
+    setIsRotating(true);
+    setTimeout(() => setIsRotating(false), 400);
+  };
+
   return (
     <>
-      <header className="sticky top-0 z-10 hidden h-20 w-full items-center justify-between bg-white/75 px-4 backdrop-blur-xl dark:bg-gray-950/75 md:flex md:justify-around">
+      <header className="sticky top-0 z-50 hidden h-20 w-full items-center justify-between bg-white/75 px-4 backdrop-blur-xl dark:bg-gray-950/75 md:flex md:justify-around">
         <div>
           <a
             href="#"
@@ -84,7 +91,7 @@ const NavBar = () => {
               href="#articles"
               aria-label="Check my articles"
               onClick={() => handleNavItemClick("1")}
-              className={`scroll-smooth rounded-xl px-3 py-2 duration-200 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}
+              className={`scroll-smooth rounded-lg px-3 py-2 duration-200 hover:bg-gray-100 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-50 ${activeNavItem === "1" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50 hover:bg-gray-200 dark:hover:bg-gray-700" : ""}`}
             >
               Articles
             </a>
@@ -92,7 +99,7 @@ const NavBar = () => {
               href="#projects"
               aria-label="Check my projects"
               onClick={() => handleNavItemClick("2")}
-              className={`scroll-smooth rounded-xl px-3 py-2 duration-200 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}
+              className={`scroll-smooth rounded-lg px-3 py-2 duration-200 hover:bg-gray-100 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-50 ${activeNavItem === "2" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50 hover:bg-gray-200 dark:hover:bg-gray-700" : ""}`}
             >
               Projects
             </a>
@@ -100,26 +107,42 @@ const NavBar = () => {
               href="#stacks"
               aria-label="Check the tech stacks im using"
               onClick={() => handleNavItemClick("3")}
-              className={`scroll-smooth rounded-xl px-3 py-2 duration-200 hover:bg-gray-200 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-700 dark:hover:text-gray-50 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50" : ""}`}
+              className={`scroll-smooth rounded-lg px-3 py-2 duration-200 hover:bg-gray-100 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-50 ${activeNavItem === "3" ? "bg-gray-200 text-gray-900 dark:bg-gray-700 dark:text-gray-50 hover:bg-gray-200 dark:hover:bg-gray-700" : ""}`}
             >
               Stacks
+            </a>
+            <a
+              href="https://blog.bingops.com"
+              target="_blank"
+              aria-label="Check my blog"
+              className={`scroll-smooth rounded-lg flex items-center gap-1 px-3 py-2 duration-200 hover:bg-gray-100 hover:text-gray-900 active:bg-gray-300 dark:hover:bg-gray-800 dark:hover:text-gray-50`}
+            >
+              Blog
+              <GoArrowUpRight />
             </a>
           </nav>
           <hr className="w-6 rotate-90 dark:border-gray-500" />
           <div className="flex items-center gap-5">
             <button
               aria-label="Light/Dark mode toggle button"
-              onClick={() => setIsDarkMode(!isDarkMode)}
+              onClick={handleModeToggle}
             >
-              <img
-                src={isDarkMode ? darkModeIcon : lightModeIcon}
-                alt="Light or Dark mode button icon"
-              />
+              <span
+                className={`inline-block transition-transform translate-y-1 duration-400 ${
+                  isRotating ? "rotate-180" : ""
+                }`}
+              >
+                {isDarkMode ? (
+                  <HiOutlineMoon className="w-6 h-6 text-gray-900 dark:text-gray-50" />
+                ) : (
+                  <HiOutlineSun className="w-6 h-6 text-gray-900 dark:text-gray-50" />
+                )}
+              </span>
             </button>
             <button
               aria-label="Contact me button to open contact form"
               onClick={openModal}
-              className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 duration-200 hover:bg-gray-300 hover:text-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50"
+              className="rounded-lg bg-gray-900 px-5 py-2 text-gray-50 duration-200 hover:bg-gray-300 hover:text-gray-950 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50"
             >
               Contact Me
             </button>
@@ -131,6 +154,8 @@ const NavBar = () => {
           </div>
         )}
       </header>
+
+      {/* Mobile Header */}
       <header className="fixed top-0 z-20 w-full bg-white/75 backdrop-blur-xl dark:bg-gray-950/75 md:hidden">
         <div className="flex h-20 items-center justify-between px-5">
           <div>
@@ -194,10 +219,21 @@ const NavBar = () => {
                 >
                   Stacks
                 </a>
+                <a
+                  href="#stacks"
+                  aria-label="Check the tech stacks im using"
+                  onClick={() => {
+                    handleNavItemClick("3");
+                  }}
+                  className="py-2 flex items-center gap-1"
+                >
+                  Blog
+                  <GoArrowUpRight />
+                </a>
                 <button
                   aria-label="Contact me button to open contact form"
                   onClick={openModal}
-                  className="rounded-xl bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50"
+                  className="rounded-lg bg-gray-900 px-5 py-2 text-gray-50 hover:bg-gray-700 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-600 dark:hover:text-gray-50"
                 >
                   Contact Me
                 </button>
@@ -206,12 +242,19 @@ const NavBar = () => {
             <div className="flex w-1/2 items-end justify-end pb-2">
               <button
                 aria-label="Light/Dark mode toggle button"
-                onClick={() => setIsDarkMode(!isDarkMode)}
+                onClick={handleModeToggle}
               >
-                <img
-                  src={isDarkMode ? darkModeIcon : lightModeIcon}
-                  alt="Light or Dark mode button icon"
-                />
+                <span
+                  className={`inline-block transition-transform translate-y-2 duration-400 ${
+                    isRotating ? "rotate-180" : ""
+                  }`}
+                >
+                  {isDarkMode ? (
+                    <HiOutlineMoon className="w-6 h-6 text-gray-900 dark:text-gray-50" />
+                  ) : (
+                    <HiOutlineSun className="w-6 h-6 text-gray-900 dark:text-gray-50" />
+                  )}
+                </span>
               </button>
             </div>
           </div>
