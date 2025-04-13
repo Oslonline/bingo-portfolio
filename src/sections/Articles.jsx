@@ -31,7 +31,7 @@ const Articles = () => {
     <section className="flex items-center justify-center bg-gray-50 py-16 dark:bg-gray-900 md:py-20">
       <div className="flex w-5/6 flex-col items-center gap-6 md:w-5/6">
         <div className="flex flex-col items-center gap-2">
-          <h3 className="w-max select-none rounded-full bg-gray-200 px-3 py-1 text-gray-800 dark:bg-gray-700 dark:text-gray-50">
+          <h3 className="w-max select-none md:text-xl lg:text-2xl rounded-md bg-white px-3 py-1 text-gray-800 dark:bg-gray-800 border-gray-300 dark:border-gray-600 border dark:text-gray-50">
             Articles
           </h3>
           <p className="text-center text-gray-600 dark:text-gray-300">
