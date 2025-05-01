@@ -6,6 +6,11 @@ on:
       - master
     paths:
       - 'Dockerfile'
+      - 'src/**'
+      - 'public/**'
+      - 'package.json'
+      - 'package-lock.json'
+
 
 jobs:
   build-push:
