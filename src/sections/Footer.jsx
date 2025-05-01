@@ -34,7 +34,7 @@ function Footer() {
         </p>
         <div className="flex gap-4 justify-center">
           <a
-            href="https://tryhackme.com/p/BingOps"
+            href="https://tryhackme.com/p/Bingops"
             target="_blank"
             aria-label="Check my TryHackMe profile"
           >
