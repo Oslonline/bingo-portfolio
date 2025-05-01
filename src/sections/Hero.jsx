@@ -45,7 +45,7 @@ const Home = () => {
             <p>
               Currently working at{" "}
               <a
-                href="https://radiofrance.com"
+                href="https://www.radiofrance.fr"
                 aria-label="Check the website of my employer, RadioFrance"
                 className="font-semibold dark:text-gray-100 underline dark:hover:text-gray-300 hover:text-gray-800"
               >
