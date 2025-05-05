@@ -1,21 +1,21 @@
 [
   {
-    "title": "k8slab",
-    "content": "k8slab is designed to simplify the process of setting up a Kubernetes cluster in a homelab environment, leveraging Proxmox VMs for creating both master and worker nodes. This project utilizes Terraform for infrastructure provisioning and Ansible for configuration management, ensuring that your Kubernetes nodes are ready to go with minimal manual intervention",
-    "imageURL": "../projects/k8slab.webp",
-    "stacks": ["ansible", "terraform", "kubernetes"],
-    "link": "https://github.com/0xBingo/k8slab"
+    "title": "labops",
+    "content": "A Kubernetes homelab project that automates the deployment and management of applications using a GitOps workflow",
+    "imageURL": "../projects/labops.webp",
+    "stacks": ["kubernetes", "terraform", "ansible"],
+    "link": "https://github.com/bingops-com/labops"
   },
   {
-    "title": "bingops.com-provisioning",
-    "content": "This Ansible project automates the deployment of a React-based portfolio website at bingops.com and blog at blog.bingops.com on my Proxmox server. It configures the server using a Cloudflare tunnel, NGINX, and deploys both web applications",
-    "imageURL": "../projects/bingops.com-provisioning.webp",
-    "stacks": ["ansible", "terraform"],
-    "link": "https://github.com/bingops-com/bingops.com-provisioning"
+    "title": "CVE-2025-1974",
+    "content": "A minimal test tool to help detect annotation injection vulnerabilities in Kubernetes NGINX Ingress controllers. This script sends a crafted AdmissionReview request to simulate a potential exploit path from CVE-2025-1974 and checks for signs of misinterpreted annotations in controller logs",
+    "imageURL": "../projects/CVE-2025-1974.webp",
+    "stacks": ["kubernetes", "nginx", "python"],
+    "link": "https://github.com/0xBingo/CVE-2025-1974"
   },
   {
     "title": "monitoring-provisioning",
-    "content": "This project sets up a complete monitoring infrastructure, fully automated with Terraform and Ansible, deployed in a Proxmox environment. It provisions virtual machines for metrics, logs, and visualization using a VM template, and configures Prometheus, Alertmanager, Grafana, Elasticsearch, Logstash, and Kibana",
+    "content": "This project sets up a complete monitoring infrastructure, fully automated with Terraform and Ansible, deployed in a Proxmox environment. It provisions virtual machines for metrics, logs, visualization, by configuring Prometheus, Alertmanager, Grafana, Elasticsearch, Logstash, and Kibana",
     "imageURL": "../projects/monitoring-provisioning.webp",
     "stacks": [
       "ansible",
