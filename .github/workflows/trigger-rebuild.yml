@@ -1,0 +1,40 @@
+name: Trigger Docker Rebuild
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - 'tailwind.config.js'
+      - 'postcss.config.js'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'vite.config.js'
+      - 'tailwind.config.js'
+      - 'postcss.config.js'
+
+jobs:
+  dispatch-rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call rebuild-image on infra repo
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.REPO_INFRA_TOKEN }}
+          repository: bingops-com/labops
+          event-type: rebuild-image
+          client-payload: '{"image": "www"}'
