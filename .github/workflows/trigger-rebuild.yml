@@ -37,7 +37,4 @@ jobs:
           token: ${{ secrets.REPO_INFRA_TOKEN }}
           repository: bingops-com/labops
           event-type: rebuild-image
-          client-payload: |
-            {
-              "image": "www",
-            }
+          client-payload: '{"image": "www"}'
