@@ -1,0 +1,45 @@
+name: Trigger Docker Rebuild
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - '*.js'
+
+  pull_request:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'index.html'
+      - 'package.json'
+      - 'package-lock.json'
+      - '*.js'
+
+jobs:
+  dispatch-rebuild:
+    runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: www
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine if it's a PR
+        run: bash .github/scripts/is_pr.sh
+
+      - name: Call rebuild-image on infra repo
+        uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.REPO_INFRA_TOKEN }}
+          repository: bingops-com/labops
+          event-type: rebuild-image
+          client-payload: '{"image": "${{ env.IMAGE_NAME }}", "is_pr": "${{ env.IS_PR }}"}'
