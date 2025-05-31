@@ -1,7 +1,9 @@
 import NavBar from "./components/NavBar";
 import { Hero, Articles, Projects, Stacks, Footer, Credits } from "./sections";
+import Devoirs from "./components/Devoirs";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-function App() {
+function HomePage() {
   return (
     <div className="bg-white dark:bg-gray-950">
       <NavBar />
@@ -15,6 +17,26 @@ function App() {
       <Footer />
       <Credits />
     </div>
+  );
+}
+
+function DevoirsPage() {
+  return (
+    <Devoirs />
+  )
+}
+
+
+function App() {
+  return (
+    <BrowserRouter>
+      <div className="bg-white dark:bg-gray-950">
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/devoirs" element={<DevoirsPage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
